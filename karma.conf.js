@@ -1,5 +1,5 @@
 module.exports = function(config) {
-  const files = true ? [
+  const files = false ? [
     'test/qunit.js',
     'test/karma-env.js',
     'src/*.js',
@@ -11,12 +11,17 @@ module.exports = function(config) {
     'test/karma-env.js',
     'src/*.js',
     'test/dexie-unittest-utils.js',
-    // 'addons/Dexie.Observable/*.js',
+    'addons/Dexie.Observable/*.js',
     // 'addons/Dexie.Syncable/*.js',
-    // 'addons/Dexie.Yield/*.js',
-    // 'test/addons/tests-observable.js',
+    // 'samples/remote-sync/websocket/WebSocketSyncProtocol.js',
+    // 'samples/remote-sync/websocket/websocketserver-shim.js',
+    // 'samples/remote-sync/websocket/WebSocketSyncServer.js',
+    'addons/Dexie.Yield/*.js',
+    // 'test/addons/tests-WebSocketSyncServer.js',
+    // 'test/addons/tests-syncprovider.js',
     // 'test/addons/tests-syncable.js',
-    // 'test/addons/tests-yield.js',
+    // 'test/addons/tests-observable.js',
+    'test/addons/tests-yield.js',
   ];
   const configuration = {
     basePath: '',
