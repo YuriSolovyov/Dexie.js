@@ -1,4 +1,23 @@
 module.exports = function(config) {
+  const files = true ? [
+    'test/qunit.js',
+    'test/karma-env.js',
+    'src/*.js',
+    'test/dexie-unittest-utils.js',
+    'test/tests-*.js',
+    { pattern: 'test/worker.js', included: false },
+  ] : [
+    'test/qunit.js',
+    'test/karma-env.js',
+    'src/*.js',
+    'test/dexie-unittest-utils.js',
+    // 'addons/Dexie.Observable/*.js',
+    // 'addons/Dexie.Syncable/*.js',
+    // 'addons/Dexie.Yield/*.js',
+    // 'test/addons/tests-observable.js',
+    // 'test/addons/tests-syncable.js',
+    // 'test/addons/tests-yield.js',
+  ];
   const configuration = {
     basePath: '',
 
@@ -14,23 +33,7 @@ module.exports = function(config) {
       captureConsole: false
     },
 
-    files: [
-      'test/qunit.js',
-      'test/karma-env.js',
-      'src/*.js',
-      'test/dexie-unittest-utils.js',
-      'test/tests-extendability.js',
-      'test/tests-promise.js',
-      'test/tests-table.js',
-      'test/tests-open.js',
-      'test/tests-collection.js',
-      'test/tests-whereclause.js',
-      'test/tests-exception-handling.js',
-      'test/tests-upgrading.js',
-      'test/tests-transaction.js',
-      'test/tests-performance.js',
-      { pattern: 'test/worker.js', included: false },
-    ],
+    files: files,
 
     port: 9876,
     captureTimeout: 10 * 1000,
